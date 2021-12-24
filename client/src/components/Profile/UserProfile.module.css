@@ -1,0 +1,345 @@
+.profile {
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.profile h1 {
+  font-size: 5rem;
+}
+.overallCont {
+  width: 90%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+.divImg{
+  width:50%;
+  height:100%;
+}
+.overallContimg {
+  width: 0%;
+  height:100%;
+  
+}
+.mainCont {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 1rem auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffcc70;
+  background-image: linear-gradient(
+    43deg,
+    #ffcc70 0%,
+    #ffffff 46%,
+    #ffcc70 100%
+  );
+}
+@media (min-width:560px)and (max-width:620px) {
+  .mainCont {
+    width: 100%;
+  }
+  .overallCont{
+    width:75%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width:620px) and (max-width:998px) {
+  
+  .mainCont {
+    width: 100%;
+  }
+  .overallCont{
+    width:70%;
+    
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
+@media (min-width:998px) {
+  .overallContimg {
+    width: 50%;
+  
+  }
+  .mainCont {
+    width: 50%;
+  }
+  .overallCont{
+    width:70%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
+
+.parastyle {
+  font-style: italic;
+  font-weight: 500;
+  color: #991010;
+  padding: 0 1rem;
+  width: 100%;
+}
+.mainDiv {
+  position: relative;
+  width: 300%;
+  /* background-image: linear-gradient(to top left, white 0%, #991010 100%); */
+  background-color: white;
+  border: 2px solid black;
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  /* animation: main-slide 24s ease-out infinite; */
+  transition: ease 1000ms;
+}
+.favPara {
+  background-color: grey;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 0.2rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.entireMenu {
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+  background-color: black;
+  text-align: center;
+  position: relative;
+  width: 5rem;
+  margin: 1rem auto;
+  color: #991010;
+  font-weight: 700;
+  border-radius: 5px;
+}
+.leftmeals {
+  width: 100%;
+  margin-right: 0.2rem;
+  /* animation: left-one 2000ms infinite; */
+}
+.rightmeals {
+  width: 100%;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+
+  /* animation: left-one 2000ms infinite; */
+}
+.paraDiv {
+  /* background-color: rgb(207, 198, 198); */
+  padding: 0.3rem 0.3rem;
+}
+.mainmeals {
+  width: 100%;
+  margin-right: 0.2rem;
+  /* animation: left-one 2000ms infinite; */
+}
+.meals {
+  position: relative;
+  max-width: 100%;
+  /* animation: slide-left 500ms ease-out forwards; */
+  border-radius: 10px;
+}
+.meals:hover {
+  animation: bump 500ms ease-in-out;
+}
+@keyframes main-slide {
+  0% {
+    left: 0%;
+  }
+  33% {
+    left: -100%;
+  }
+  66% {
+    left: -200%;
+  }
+  100% {
+    left: -200%;
+  }
+}
+@keyframes left-one {
+  0% {
+    transform: translateX(20rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.para {
+  position: relative;
+  margin: 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: black;
+  font-weight: 600;
+  width: 100%;
+}
+.link {
+  text-decoration: none;
+}
+.indFoodItem {
+  width: 300%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #ffcc70;
+  background-image: linear-gradient(
+    43deg,
+    #ffcc70 0%,
+    #ffffff 46%,
+    #ffcc70 100%
+  );
+  margin: 0 auto;
+  transition: all 1s;
+}
+.indFoodItem img {
+  width: 100%;
+  border-radius: 15px;
+}
+.namePriceFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.itemDetails {
+  width: 100%;
+  padding: 0.5rem 2.5rem;
+}
+.namePriceFlex h3 {
+  color: red;
+  font-size: 1.1rem;
+}
+.leftButton {
+  position: absolute;
+  left: 1%;
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background-color: black;
+  color: grey;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.rightButton {
+  position: absolute;
+  right: 1%;
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background-color: black;
+  color: grey;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.linkItem {
+  text-decoration: none;
+  color: black;
+  width: calc(100% / 3);
+}
+.checkoutBtn {
+  display: block;
+  width: 80%;
+  padding: 0.5rem 0.5rem;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 1rem auto;
+}
+.sideCont {
+  width: 28rem;
+  display: inline-block;
+  margin: 1rem 3rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem 1rem;
+}
+.sideCont p {
+  text-align: center;
+}
+.sideCont button {
+  display: block;
+  margin: 1rem auto;
+  background-color: rgb(94, 94, 212);
+  border-radius: 5px;
+  padding: 0.6rem 1rem;
+}
+.sideContflex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.paraflex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sideCont img {
+  width: 50%;
+}
+.incCont {
+  width: 100rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: tomato;
+  margin: 1 auto;
+}
+
+input[type="radio"] {
+  font-size: 1rem;
+}
+.paraflex p {
+  font-weight: 600;
+}
+.pOR {
+  font-family: "Poppins", cursive;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.mainContP {
+  text-align: center;
+  font-family: "Poppins", cursive;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
