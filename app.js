@@ -54,10 +54,11 @@ app.use(
     },
   })
 );
-
+console.log('Before stripe');
 app.use(
   "/getstripesession/:amount",
   async (req,res,next) => {
+    console.log('Inside stripe');
     const amount = req.params.amount;
     const paymentIntent = await stripe.paymentIntents.create({
       amount,

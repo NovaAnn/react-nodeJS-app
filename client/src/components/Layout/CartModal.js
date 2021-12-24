@@ -101,14 +101,14 @@ const CartModal = (props) => {
   };
   const submitOrderHandler = async (userData) => {
     const result = await fetch(
-      "https://thefoodtruck.herokuapp.com/5600",
+      `https://thefoodtruck.herokuapp.com/getstripesession/${+cartCtx.totalAmount}`,
       {
         method: 'POST',
         headers: {
           Authorization: 'Bearer ' + authCtx.token
         },
         body: JSON.stringify({
-          amount:5600
+          amount:+cartCtx.totalAmount
         })
       }
     ).then(res=>{
