@@ -9,7 +9,6 @@ const { graphqlHTTP } = require("express-graphql");
 const graphqlSchema = require("./controllers/graphql/schema");
 const graphqlResolver = require("./controllers/graphql/resolvers");
 const auth = require("./controllers/middleware/auth");
-const auth = require("./client");
 const Stripe = require("stripe");
 const Order = require('./controllers/models/order');
 
