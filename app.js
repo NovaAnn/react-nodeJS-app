@@ -60,10 +60,13 @@ app.use(
   async (req,res,next) => {
     console.log('Inside stripe');
     const amount = req.params.amount;
+    console.log(amount);
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
       currency:"usd"
     });
+    console.log("paymentIntent");
+    console.log(paymentIntent);
     if (paymentIntent){
       res.status(200).json(paymentIntent.client_secret);
     } else {
