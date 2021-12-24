@@ -1,5 +1,6 @@
 
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 // const { MongoClient } = require("mongodb");
@@ -8,13 +9,14 @@ const { graphqlHTTP } = require("express-graphql");
 const graphqlSchema = require("./controllers/graphql/schema");
 const graphqlResolver = require("./controllers/graphql/resolvers");
 const auth = require("./controllers/middleware/auth");
+const auth = require("./client");
 const Stripe = require("stripe");
 const Order = require('./controllers/models/order');
 
 const app = express();
 
 if (process.env.NODE_ENV == 'production'){
-  app.use(express.static(client/build))
+  app.use(express.static(path.resolve(__dirname, './client/build'))
 }
 const stripe = new Stripe('sk_test_51K5KCYJnr3G3bhPBBePnVK1NiUJPDZVez2ijSeGjv2BrPwHaKHMwmTPdkaVJtoNgXi7q8Vr6xvbOQdSQ78sMi19A00qBfuoRi0');
 const port = process.env.PORT || 4000;
