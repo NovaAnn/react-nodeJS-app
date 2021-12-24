@@ -126,6 +126,9 @@ main{
 .featuresDivBtn div:hover {
   transform: translateY(-75%);
 }
+.white highlight {
+  color:white;
+}
 .highlight {
   position: relative;
 }
@@ -780,7 +783,7 @@ transform: translateX(-5rem) skewX(12deg);
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
     url("https://media-cdn.tripadvisor.com/media/photo-s/1b/7b/16/a9/a-refreshing-beer-with.jpg");
   background-size: cover;
   height: 90vh;
