@@ -72,7 +72,7 @@ const Menu = () => {
     firstTimeFunction(graphqlQuery);
   };
   const firstTimeFunction = (graphqlQuery) => {
-    fetch("http://localhost:8000/graphql", {
+    fetch("https://thefoodtruck.herokuapp.com/graphql", {
       method: "POST",
       body: JSON.stringify(graphqlQuery),
       headers: {

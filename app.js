@@ -19,6 +19,7 @@ if (process.env.NODE_ENV == 'production'){
 }
 const stripe = new Stripe('sk_test_51K5KCYJnr3G3bhPBBePnVK1NiUJPDZVez2ijSeGjv2BrPwHaKHMwmTPdkaVJtoNgXi7q8Vr6xvbOQdSQ78sMi19A00qBfuoRi0');
 const port = process.env.PORT || 4000;
+console.log(port);
 app.use(bodyParser.json()); // application/json
 
 app.use((req, res, next) => {

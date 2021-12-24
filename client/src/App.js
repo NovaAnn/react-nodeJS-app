@@ -15,7 +15,6 @@ import CartContext from "./store/cart-context";
 function App() {
   console.log("Inside App");
   const authCtx = useContext(AuthContext);
-  // const CartCtx = useContext(CartContext);
 
 
   return (

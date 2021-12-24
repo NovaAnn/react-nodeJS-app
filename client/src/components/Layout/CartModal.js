@@ -43,7 +43,7 @@ const CartModal = (props) => {
           }`,
   };
   const firstTimeFunction = async (graphqlQuery) => {
-    const jsonResponse = await fetch("http://localhost:8000/graphql", {
+    const jsonResponse = await fetch("https://thefoodtruck.herokuapp.com/graphql", {
       method: "POST",
       body: JSON.stringify(graphqlQuery),
       headers: {
@@ -101,7 +101,7 @@ const CartModal = (props) => {
   };
   const submitOrderHandler = async (userData) => {
     const result = await fetch(
-      "http://localhost:8000/getstripesession/5600",
+      "https://thefoodtruck.herokuapp.com/5600",
       {
         method: 'POST',
         headers: {
@@ -126,7 +126,7 @@ const CartModal = (props) => {
           postOrder          
           }`,
     };
-    const jsonResponse = await fetch("http://localhost:8000/graphql", {
+    const jsonResponse = await fetch("https://thefoodtruck.herokuapp.com/graphql", {
     method: "POST",
     body: JSON.stringify(graphqlQuery),
     headers: {

@@ -39,7 +39,7 @@ const MainNavigation = () => {
                    
               }`,
       };
-      fetch("http://localhost:8000/graphql", {
+      fetch("https://thefoodtruck.herokuapp.com/graphql", {
         method: "POST",
         body: JSON.stringify(graphqlQuery),
         headers: {

@@ -14,21 +14,7 @@ const PreviousOrderItem = (props) => {
       price: +item.product.price,
     });
   };
-  const invoiceHandler = async (orderId) => {
-    const result = await fetch(
-      `http://localhost:8000/getInvoice/${orderId}`,
-      {
-        method: 'GET',
-        headers: {
-          Authorization: 'Bearer ' + authCtx.token
-        },
-      
-      }
-    ).then(res=>{
-    return res.json();
-  });
 
-  };
   return (
     <li className={classes.list}>
       <h2>Order No : {props.list.id}</h2>

@@ -50,7 +50,7 @@ const PreviousOrders = () => {
   };
   const fetchOrders = async function () {
   
-    const data = await fetch("http://localhost:8000/graphql", {
+    const data = await fetch("https://thefoodtruck.herokuapp.com/graphql", {
       method: "POST",
       body: JSON.stringify(graphqlQuery),
       headers: {
