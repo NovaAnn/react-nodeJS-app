@@ -269,7 +269,7 @@ main{
   height: 30rem;
   margin: 0 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
-    url("https://media.istockphoto.com/photos/restaurant-kitchen-crew-in-action-picture-id1277763706?b=1&k=20&m=1277763706&s=170667a&w=0&h=oFB9fgBOnyAH-0L4yMWlOj28kDDj6WbPzratZ4spP40=");
+    url("../../restaurantimage.jpg");
   background-size: cover;
 
   color: white;
@@ -285,6 +285,7 @@ main{
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin: 0 auto;
 }
 .footerGrp div {
   margin: 1.5rem 0.5rem;
@@ -330,10 +331,22 @@ main{
 .footer nav ul li a {
   list-style: none;
   text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 600;
   font-family: "Poppins", sans-serif;
   color: white;
+}
+@media (min-width:617px) {
+  .footer nav ul li a {
+    font-size: 1.2rem;
+  }
+    
+}
+@media (min-width:768px) {
+  .footer nav{
+    width:80%;
+  }
+    
 }
 .indSlide h3 {
   margin: 1rem 0.3rem;
@@ -777,7 +790,7 @@ transform: translateX(-5rem) skewX(12deg);
   width: 100%;
 }
 .footer div {
-  margin: 6rem auto;
+  margin: 5rem auto;
 }
 .imgFlex {
   display: flex;
