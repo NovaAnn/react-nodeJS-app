@@ -279,7 +279,7 @@ main{
   height: 30rem;
   margin: 0 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
-    url("https://media.istockphoto.com/photos/restaurant-kitchen-crew-in-action-picture-id1277763706?b=1&k=20&m=1277763706&s=170667a&w=0&h=oFB9fgBOnyAH-0L4yMWlOj28kDDj6WbPzratZ4spP40=");
+  url("../../restaurantimage.jpg");
   background-size: cover;
 
   color: white;
