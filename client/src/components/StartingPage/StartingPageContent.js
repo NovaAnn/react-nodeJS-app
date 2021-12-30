@@ -3,11 +3,23 @@ import { useState, useEffect, useRef } from "react";
 
 const StartingPageContent = () => {
   const rootMargin = "-100px";
-  const [isIntersecting,setIntersecting] = useState(false);
+  const [isIntersectingi,setIntersectingi] = useState(false);
+  const [isIntersectingt,setIntersectingt] = useState(false);
+  const [isIntersectingf,setIntersectingf] = useState(false);
+  const imgClasses = `${classes.imgAnim} ${
+    isIntersectingi ? classes.imgAnimanim : ""
+  }`;
+  const textflxClasses = `${classes.testFlex} ${
+    isIntersectingt ? classes.testFlexanim : ""
+  }`;
+  const featureClasses = `${classes.featuresDiv} ${
+    isIntersectingf ? classes.ftrdivanim : ""
+  }`;
   const inputRefHand = useRef();
  
   const secondDiv = useRef();
   const featuresRef = useRef();
+  const testRef = useRef();
   const [featureNum, setFeatureNum] = useState(0);
   const [subscribed, setSubscribed] = useState(false);
   const addMouseOverEvent = (e) => {
@@ -19,11 +31,32 @@ const StartingPageContent = () => {
   };
     useEffect(()=>{
       const observer = new IntersectionObserver(([entry])=>{
-        setIntersecting(entry.isIntersecting);
-      },{rootMargin},);
+        console.log(entry);
+        console.log(entry.target.className);
+        if (entry.target.className.includes('mainImgFlex'))
+        {
+          setIntersectingi(entry.isIntersecting);
+        } else 
+          if (entry.target.className.includes('featureOverall')) {
+          setIntersectingf(entry.isIntersecting);
+        }else 
+        if (entry.target.className.includes('mainTest')) {
+        setIntersectingt(entry.isIntersecting);
+      }
+        
+
+      },{root:null,rootMargin,threshold:0});
 
       if(secondDiv.current){
         observer.observe(secondDiv.current);
+
+      }
+      if(testRef.current){
+        observer.observe(testRef.current);
+
+      }
+      if(featuresRef.current){
+        observer.observe(featuresRef.current);
 
       }
     
@@ -31,8 +64,14 @@ const StartingPageContent = () => {
         if (secondDiv.current){
           observer.unobserve(secondDiv.current);
         }
-        
-
+        if(featuresRef.current){
+          observer.unobserve(featuresRef.current);
+  
+        }
+        if(testRef.current){
+          observer.unobserve(testRef.current);
+  
+        }
       } 
     },[])
 
@@ -47,7 +86,7 @@ const StartingPageContent = () => {
   ];
   const [slideNum, setSlideNum] = useState(0);
   useEffect(() => {
-    const timer = setTimeout(nextSlide, 5000);
+    const timer = setTimeout(nextSlide, 3000);
     return () => {
       clearTimeout(timer);
     };
@@ -72,7 +111,7 @@ const StartingPageContent = () => {
         {!subscribed && (
           <div className={classes.emailgrp}>
             <button onClick={submitHandler}>Subscribe For Updates</button>
-            <input placeholder="Enter your email address" ref={inputRefHand} />
+            <input placeholder="Email address" ref={inputRefHand} />
           </div>
         )}
         {subscribed && (
@@ -114,16 +153,16 @@ const StartingPageContent = () => {
           
         </div>
         
-      </div> 
+      </div>
 
-     <div className={classes.mainImgFlex} ref={secondDiv}>
-        {isIntersecting && (
-          <div  className={classes.imgAnim}>
-            <h2>The partnership you can trust!</h2>
-            <img src="https://image.freepik.com/free-vector/fast-mail-service-male-character-postman-drive-motorbike-supply-order-client-woman-isolated-white-cartoon-illustration_169479-1018.jpg" /></div>)}
+     <div className={classes.mainImgFlex} ref={secondDiv} style={{ opacity: `${isIntersectingi ? 1:0}` }}>
         
-        {isIntersecting && (<div className={classes.testFlex}>
-          <div className={classes.mainTest}> 
+          <div  className={imgClasses} >
+            <h2>The partnership you can trust!</h2>
+            <img src="https://image.freepik.com/free-vector/fast-mail-service-male-character-postman-drive-motorbike-supply-order-client-woman-isolated-white-cartoon-illustration_169479-1018.jpg" /></div>
+        
+       <div className={textflxClasses}>
+          <div className={classes.mainTest} ref={testRef}> 
           <div className={classes.imgCircle}>
             
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWKhsDaHBKpuSLNP41a0WDeIx2o56OxoOlhQ&usqp=CAU" />
@@ -145,11 +184,11 @@ const StartingPageContent = () => {
 
           </div>
           
-        </div>)}
+        </div>
         
       </div> 
-          <div ref={featuresRef} className={classes.featureOverall}>
-          <div className={classes.featuresDiv} >
+          <div ref={featuresRef} className={classes.featureOverall} style={{ opacity: `${isIntersectingf ? 1:0}` }}>
+          <div className={featureClasses} >
         <div className={classes.featuresDivBtn} onMouseOver={addMouseOverEvent}>
           <div className={classes.featuresEach} name="featuresEach" data-span={0}>
             1000+ satisfied customers

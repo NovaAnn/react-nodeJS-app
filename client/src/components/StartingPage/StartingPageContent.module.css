@@ -13,9 +13,10 @@ main{
   font-family: "Poppins", cursive;
   color: black;
   z-index: 20;
+  margin-bottom: 1rem;
 }
 .featuresDiv {
-  width: 96%;
+  width: 98%;
   margin: 7rem auto;
   background-color: white;
 
@@ -108,7 +109,7 @@ main{
   /* position: absolute; */
   transform: translateY(-50%);
   /* font-family: "Poppins", cursive; */
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   background-color: chocolate;
   color: black;
   font-weight: 600;
@@ -126,9 +127,6 @@ main{
 .featuresDivBtn div:hover {
   transform: translateY(-75%);
 }
-.white highlight {
-  color:white;
-}
 .highlight {
   position: relative;
 }
@@ -141,7 +139,16 @@ main{
   z-index: -1;
   transform: skewX(-15deg);
 }
-
+@media (min-width:500px) {
+  .featuresEach{
+    font-size: 0.9rem;
+  }
+}
+@media (min-width:440px) {
+  .featuresEach{
+    font-size: 0.8rem;
+  }
+}
 .slide {
   width: 90%;
   margin: 2rem auto;
@@ -272,7 +279,7 @@ main{
   height: 30rem;
   margin: 0 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
-    url("../../restaurantimage.jpg");
+    url("https://media.istockphoto.com/photos/restaurant-kitchen-crew-in-action-picture-id1277763706?b=1&k=20&m=1277763706&s=170667a&w=0&h=oFB9fgBOnyAH-0L4yMWlOj28kDDj6WbPzratZ4spP40=");
   background-size: cover;
 
   color: white;
@@ -290,6 +297,7 @@ main{
   width: 100%;
   margin: 0 auto;
 }
+
 .footerGrp div {
   margin: 1.5rem 0.5rem;
 }
@@ -320,6 +328,7 @@ main{
   width: 6rem;
   height: 6rem;
 }
+
 .footer nav ul {
   padding: 1rem 2rem;
   width: 100%;
@@ -327,6 +336,7 @@ main{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 1rem 0.2rem;
 }
 .footer nav ul li {
   list-style: none;
@@ -334,10 +344,16 @@ main{
 .footer nav ul li a {
   list-style: none;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   color: white;
+}
+@media (min-width:500px) {
+  .footer nav ul li a {
+    font-size: 1rem;
+  }
+    
 }
 @media (min-width:617px) {
   .footer nav ul li a {
@@ -505,14 +521,30 @@ main{
   /* margin: 0 3rem; */
 }
 .imgAnim{
-  animation:slide-up 1.2s linear forwards;
   width: 45%;
   height: 30rem;
   background-color: white;
   display: flex;
   flex-direction: column;
-  
+}
 
+.imgAnimanim{
+  animation:slide-up 1.2s linear forwards;
+}
+.ftrdivanim{
+  animation:slide-side 1.2s linear forwards;
+}
+.featuresDiv p {
+  padding:0 0.5rem;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+@media (min-width:600px) {
+  .featuresDiv p {
+    font-size: 0.9rem;
+  }
 }
 .imgAnim h2{
   margin: 0 0.4rem;
@@ -534,6 +566,12 @@ max-height: 25rem;
   justify-content: space-evenly;
   align-items: center;
   background-color: white;
+  /* animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-fill-mode:forwards; */
+  
+}
+.testFlexanim{
   animation:slide-down 1.2s linear forwards;
 }
 @media (min-width:768px) {
@@ -729,6 +767,16 @@ transform: translateX(-5rem) skewX(12deg);
     transform: translateX(0);
   }
 }
+@keyframes slide-side {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .testFlexdiv {
   padding: 1rem 2rem;
   font-size: 2rem;
@@ -783,7 +831,7 @@ transform: translateX(-5rem) skewX(12deg);
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
     url("https://media-cdn.tripadvisor.com/media/photo-s/1b/7b/16/a9/a-refreshing-beer-with.jpg");
   background-size: cover;
   height: 90vh;
@@ -793,7 +841,7 @@ transform: translateX(-5rem) skewX(12deg);
   width: 100%;
 }
 .footer div {
-  margin: 5rem auto;
+  margin: 4rem auto;
 }
 .imgFlex {
   display: flex;
@@ -816,9 +864,11 @@ transform: translateX(-5rem) skewX(12deg);
   display: block;
   /* background-color: black; */
   color: white;
+  display: flex;
+  max-width:70%;
 }
 .emailgrp button {
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   /* border-radius: 5px; */
@@ -826,14 +876,34 @@ transform: translateX(-5rem) skewX(12deg);
   font-size: 1rem;
   font-weight: 600;
   border: none;
+  width:55%;
 }
 .emailgrp input {
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1.3rem;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   /* transform: translateX(-10px); */
-
+  width:45%;
   border: none;
+}
+
+@media (min-width:550px) {
+  .emailgrp {
+  
+    max-width:60%
+  }
+  .emailgrp input{
+    padding: 1rem 1.3rem;
+  }
+  .emailgrp button{
+    padding: 1rem 1.3rem;
+  }
+}
+@media (min-width:810px) {
+  .emailgrp {
+  
+    max-width:50%;
+  }
 }
 .emailgrpSub {
   background-color: darkgreen;
