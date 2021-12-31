@@ -241,13 +241,24 @@
 }
 .namePriceFlex h2 {
   white-space: nowrap;
-  font-size: revert;
+  font-size: 1.2rem;
 }
 
 .namePriceFlex h3 {
   color: red;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: revert;
+  padding:0 0.6rem;
+}
+@media (min-width:420px) {
+  .namePriceFlex h3 {
+    color: red;
+    font-size: 1rem;
+    margin: revert;
+  }
+  .namePriceFlex h2 {
+    font-size: revert;
+  }
 }
 @media (min-width:460px) {
   .namePriceFlex h3 {
