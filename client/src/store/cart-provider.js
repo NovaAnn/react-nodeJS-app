@@ -6,6 +6,7 @@ const defaultCartState = {
   items: [],
   totalAmount: 0,
   showCart: false,
+  showMenu:false,
 };
 
 const cartReducer = (state, action) => {
@@ -35,6 +36,7 @@ const cartReducer = (state, action) => {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
       showCart: state.showCart,
+      showMenu:state.showMenu,
     };
   }
   if (action.type === "REMOVE") {
@@ -56,6 +58,7 @@ const cartReducer = (state, action) => {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
       showCart: state.showCart,
+      showMenu:state.showMenu,
     };
   }
 
@@ -68,6 +71,16 @@ const cartReducer = (state, action) => {
       items: state.items,
       totalAmount: state.totalAmount,
       showCart: toggler,
+      showMenu:state.showMenu,
+    };
+  }
+  if (action.type === "TOGGL") {
+    const toggler = action.val;
+    return {
+      items: state.items,
+      totalAmount: state.totalAmount,
+      showCart:state.showCart,
+      showMenu: toggler,
     };
   }
   if (action.type === "REPLENISH") {
@@ -76,6 +89,7 @@ const cartReducer = (state, action) => {
       items: action.replenishArray.items,
       totalAmount: action.replenishArray.totalAmount,
       showCart: state.showCart,
+      showMenu:state.showMenu,
     };
   }
   return defaultCartState;
@@ -101,6 +115,9 @@ const CartProvider = (props) => {
   const toggleCartHandler = () => {
     dispatchCartAction({ type: "TOGGLE" });
   };
+  const toggleMenuHandler = (val) => {
+    dispatchCartAction({ type: "TOGGL",val:val });
+  };
   const replenishCartHandler = (replenishArray) => {
     dispatchCartAction({ type: "REPLENISH",replenishArray:replenishArray });
   };
@@ -109,11 +126,13 @@ const CartProvider = (props) => {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     showCart: cartState.showCart,
+    showMenu: cartState.showMenu,
 
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
     clearCart: clearCartHandler,
     toggleCart: toggleCartHandler,
+    toggleMenu: toggleMenuHandler,
     replenishCart:replenishCartHandler,
   };
 

@@ -18,6 +18,7 @@ const MainNavigation = () => {
   const [products, setProducts] = useState(false);
   const [highlighted, setHighlighted] = useState(false);
   const [showMenuDropdown, setshowMenuDropdown] = useState(false);
+  
   const authCtx = useContext(AuthContext);
   const CartCtx = useContext(CartContext);
 
@@ -88,19 +89,25 @@ const MainNavigation = () => {
   }, [CartCtx.items.length]);
   const cartNumclasses = `${classes.badge} ${highlighted ? classes.bump : ""}`;
   const showCartHandler = () => {
+    CartCtx.toggleMenu(false);
     CartCtx.toggleCart();
   };
   const closeCartHandler = () => {
     CartCtx.toggleCart();
   };
   const showMenuHandler = () => {
-    setshowMenuDropdown(prevState=>{
-      return !prevState
-    });
+    // setshowMenuDropdown(prevState=>{
+    //   return !prevState
+    // });
+    CartCtx.toggleMenu(true);
+  };
+  const closeMenuHandler = () => {
+    CartCtx.toggleMenu(false);
   };
   const isLoggedIn = authCtx.isLoggedIn;
 
   const logoutHandler = () => {
+    CartCtx.toggleMenu(false);
     authCtx.logout();
     // optional: redirect the user
   };
@@ -162,8 +169,9 @@ const MainNavigation = () => {
           {isLoggedIn && (<ul className={classes.ulMenu}>
          
               <li>
-                <div className={classes.menuHam} onClick={showMenuHandler}><i class="fas fa-bars"></i></div>
-               { showMenuDropdown && ( <ul>
+                {!CartCtx.showMenu && <div className={classes.menuHam} onClick={showMenuHandler}><i class="fas fa-bars"></i></div>}
+                {CartCtx.showMenu && <div className={classes.menuHam} onClick={closeMenuHandler}><i class="far fa-times-circle"></i></div>}
+               { CartCtx.showMenu && ( <ul>
                 {!isLoggedIn && (
               <li>
                 <Link to="/auth">Login</Link>
@@ -199,7 +207,7 @@ const MainNavigation = () => {
          
          <li>
            <div className={classes.menuHam} onClick={showMenuHandler}><i class="fas fa-bars"></i></div>
-          { showMenuDropdown && ( <ul>
+          { CartCtx.showMenu && ( <ul>
       
          <li>
            <Link to="/auth">Login</Link>

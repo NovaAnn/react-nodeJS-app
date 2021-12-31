@@ -10,7 +10,9 @@ let noOfPages = 1;
 let startIndx;
 let stopIndx;
 const PreviousOrders = () => {
+
   const authCtx = useContext(AuthContext);
+  
   const [currentPage, setCurrentPage] = useState(1);
 
   const pageHandler = (e) => {

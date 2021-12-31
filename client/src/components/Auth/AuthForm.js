@@ -6,6 +6,7 @@ import classes from "./AuthForm.module.css";
 let inputValue;
 let graphqlQuery;
 const AuthForm = (props) => {
+  
   const history = useHistory();
   const emailInputRef = useRef();
 

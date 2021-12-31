@@ -30,6 +30,7 @@
   width: 20rem;
   align-items: center;
   position: relative;
+  cursor: pointer;
 }
 .logodiv img {
   width: 25%;

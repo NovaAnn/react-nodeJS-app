@@ -239,9 +239,22 @@
   width: 100%;
   padding: 0.5rem 2.5rem;
 }
+.namePriceFlex h2 {
+  white-space: nowrap;
+  font-size: revert;
+}
+
 .namePriceFlex h3 {
   color: red;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  margin: revert;
+}
+@media (min-width:460px) {
+  .namePriceFlex h3 {
+    color: red;
+    font-size: 1.1rem;
+    margin: revert;
+  }
 }
 .leftButton {
   position: absolute;

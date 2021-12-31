@@ -7,16 +7,19 @@ let itemsArray = [
     url: "https://ak.picdn.net/shutterstock/videos/1004461/thumb/1.jpg",
     name: "Wood Fired Pizza",
     shortName: "pizza",
+    love: 90,
   },
   {
     url: "https://lh3.googleusercontent.com/VjN5ueR1sBLFXXI4I_2GdjkESMhfvvvoTD6jtTxFsXsDanum85bMZa-hNaY6r7uO2F1LLnd3OUdH--stkLlMz28AKLoW=w1000",
     name: "Biriyani",
     shortName: "biriyani",
+    love: 85,
   },
   {
     url: "https://swall.teahub.io/photos/small/128-1287412_dessert-hd-desserts-backgrounds.jpg",
     name: "Desserts",
     shortName: "desserts",
+    love: 87,
   },
 ];
 let afterSlide;
@@ -67,7 +70,7 @@ const UserProfile = () => {
                     <img src={item.url} />
                     <div className={classes.namePriceFlex}>
                       <h2>{item.name}</h2>
-                      <h3>90% customers ♥ it </h3>
+                      <h3>{item.love}% customers ♥ it </h3>
                     </div>
                     <p>
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit

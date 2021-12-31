@@ -68,11 +68,13 @@
   padding-bottom: 0.8rem;
 }
 .listItem h3 {
-  width: 18rem;
+  max-width: 80%;
+  white-space: nowrap;
   text-align: left;
+  font-size: 1.3rem;
 }
 .grped {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
 }
