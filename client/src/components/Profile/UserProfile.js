@@ -1,7 +1,8 @@
 import ProfileForm from "./ProfileForm";
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment,useContext } from "react";
 import classes from "./UserProfile.module.css";
 import { Link } from "react-router-dom";
+
 let itemsArray = [
   {
     url: "https://ak.picdn.net/shutterstock/videos/1004461/thumb/1.jpg",

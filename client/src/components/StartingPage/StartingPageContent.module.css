@@ -11,7 +11,9 @@ main{
   width: 100%;
   font-size: 2.5rem;
   font-family: "Poppins", cursive;
-  color: black;
+  /* color: rgb(0, 0, 0); */
+  font-weight: 700;
+  color:white;
   z-index: 20;
   margin-bottom: 1rem;
 }
@@ -67,7 +69,7 @@ main{
   border-radius: 10px;
 }
 .test {
-  aspect-ratio: 960/400;
+  aspect-ratio: 960/510;
   width: 100%;
   font-family: "Poppins", cursive;
   font-size: 1.5rem;
@@ -78,6 +80,12 @@ main{
   background-size: cover;
   background-position: center;
   background-image:url('../../layered-waves-haikei\ \(1\).svg');
+}
+@media (min-width:460px) and (max-width:650px){
+  .test{
+    aspect-ratio: 960/400;
+  }
+  
 }
 @media (min-width:650px) and (max-width:850px){
   .test{
