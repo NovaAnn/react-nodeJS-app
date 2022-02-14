@@ -8,36 +8,53 @@ const Order = require("../models/order");
 let token;
 
 module.exports = {
-  editProfile: async function ({ firstName,lastName,email, city }, req) {
+  createUser: async function ({ userInput }, req) {
    
+    const existingUser = await User.findOne({ email: userInput.email });
+    if (existingUser) {
+      const error = new Error("User exists already!");
+      throw error;
+    }
+    const hashedPw = await bcrypt.hash(userInput.password, 12);
     const user = new User({
-      email: email,
-      firstName: firstName,
-      lastName: lastName,
-      streetLine1: "Lange Wal 58,Arnhem",
-      city: city,
-      bankAccount: "NL ABNL 0581 123456",
-      phoneNumber: 6169532698,
+      email: userInput.email,
+      password: hashedPw,
     });
 
     const createdUser = await user.save();
+    token = jwt.sign(
+      {
+        userId: user._id.toString(),
+        email: user.email,
+      },
+      "somesupersecretsecret",
+      { expiresIn: "1h" }
+    );
   
-  
-    return true;
+    return { token: token, userId: user._id.toString() };
   },
-  getDetails: async function ({ phoneNumber}, req) {
-    const user = await User.findOne({ phoneNumber: phoneNumber });
-    console.log(user);
+  login: async function ({ email, password }, req) {
+    const user = await User.findOne({ email: email });
     if (!user) {
       const error = new Error("User not found.");
       error.code = 401;
       throw error;
     }
-  
-    return {
-      ...user._doc,
-      _id: user._id.toString(),
-    };;
+    const isEqual = await bcrypt.compare(password, user.password);
+    if (!isEqual) {
+      const error = new Error("Password is incorrect.");
+      error.code = 401;
+      throw error;
+    }
+    token = jwt.sign(
+      {
+        userId: user._id.toString(),
+        email: user.email,
+      },
+      "somesupersecretsecret",
+      { expiresIn: "1h" }
+    );
+    return { token: token, userId: user._id.toString() };
   },
   createProduct: async function ({ productInput }, req) {
     

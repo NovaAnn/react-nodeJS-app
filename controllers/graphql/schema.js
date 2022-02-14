@@ -13,7 +13,6 @@ module.exports = buildSchema(`
     }
     type Orders{
         orders:[Order]
-
     }
 type Order {
         _id:ID!
@@ -21,9 +20,7 @@ type Order {
     }
     type CartProducts{
         products:[CartProd]
-
     }
-
     type User {
         _id: ID!
         email: String!
@@ -36,13 +33,10 @@ type Order {
         product: Product!
         quantity:Int!
     }
-
-
     input UserInputData {
         email: String!
         password: String!
     }
-
     input ProductInputData {
         title: String!
         description: String!
@@ -54,29 +48,17 @@ type Order {
         token: String!
         userId: String!
     }
-    type Details{
-        _id: ID!
-        firstName: String!
-         lastName: String!
-         email: String!
-         city: String!
-         phoneNumber: Float!
-         bankAccount: String!
-         streetLine1: String!
-    }
-
     type RootQuery {
         user: User!
         products: Products!
         login(email: String!, password: String!): AuthData!
-        getDetails(phoneNumber:Float!):Details
+        getCart:CartProducts!
         getPreviousOrders:Orders!
     
     }
-
     type RootMutation {
     
-        editProfile(firstName: String!, lastName: String!,email: String!, city: String!): Boolean
+        createUser(userInput: UserInputData): AuthData!
         createProduct(productInput: ProductInputData): Product!
         addProduct(id:ID!):Boolean
         
@@ -85,7 +67,6 @@ type Order {
         deletePost(id: ID!): Boolean
         updateStatus(status: String!): User!
     }
-
     schema {
         query: RootQuery
         mutation: RootMutation
