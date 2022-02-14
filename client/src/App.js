@@ -2,15 +2,12 @@ import { useContext } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import Layout from "./components/Layout/Layout";
-import CartButton from "./components/Layout/CartButton";
-import CartModal from "./components/Layout/CartModal";
 import UserProfile from "./components/Profile/UserProfile";
 import Menu from "./components/Profile/Menu";
 import PreviousOrders from "./components/Profile/PreviousOrders";
 import AuthPage from "./pages/AuthPage";
 import HomePage from "./pages/HomePage";
 import AuthContext from "./store/auth-context";
-import CartContext from "./store/cart-context";
 
 function App() {
   console.log("Inside App");

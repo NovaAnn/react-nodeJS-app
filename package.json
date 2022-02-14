@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-complete-guide",
+  "name": "assignment",
   "version": "1.0.0",
-  "description": "Complete Node.js Guide",
+  "description": "Complete Node.js",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -30,5 +30,13 @@
     "save": "^2.4.0",
     "stripe": "^8.193.0",
     "validator": "^13.7.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NovaAnn/react-nodeJS-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NovaAnn/react-nodeJS-app/issues"
+  },
+  "homepage": "https://github.com/NovaAnn/react-nodeJS-app#readme"
 }

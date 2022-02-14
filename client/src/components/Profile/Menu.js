@@ -127,7 +127,7 @@ const Menu = () => {
         {arrayItem &&
           arrayItem.map((item) => (
             <div className={classes.indFoodItem}>
-              <img src={item.imageUrl} />
+              <img src={item.imageUrl} alt="Image"/>
               <div className={classes.itemDetails}>
                 <div className={classes.namePriceFlex}>
                   <h2>{item.title}</h2>

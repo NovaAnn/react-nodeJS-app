@@ -202,6 +202,7 @@ const StartingPageContent = () => {
         </div>
         {featuredesc.map((desc, ind) => {
           if (+featureNum === +ind) {
+            // eslint-disable-next-line default-case
             switch (+featureNum) {
               case 0:
                 return (

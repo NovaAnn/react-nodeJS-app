@@ -54,19 +54,29 @@ type Order {
         token: String!
         userId: String!
     }
+    type Details{
+        _id: ID!
+        firstName: String!
+         lastName: String!
+         email: String!
+         city: String!
+         phoneNumber: Float!
+         bankAccount: String!
+         streetLine1: String!
+    }
 
     type RootQuery {
         user: User!
         products: Products!
         login(email: String!, password: String!): AuthData!
-        getCart:CartProducts!
+        getDetails(phoneNumber:Float!):Details
         getPreviousOrders:Orders!
     
     }
 
     type RootMutation {
     
-        createUser(userInput: UserInputData): AuthData!
+        editProfile(firstName: String!, lastName: String!,email: String!, city: String!): Boolean
         createProduct(productInput: ProductInputData): Product!
         addProduct(id:ID!):Boolean
         
