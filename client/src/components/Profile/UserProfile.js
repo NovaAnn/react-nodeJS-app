@@ -1,5 +1,6 @@
-import ProfileForm from "./ProfileForm";
-import { useState, useEffect, Fragment,useContext } from "react";
+/* eslint-disable eqeqeq */
+/* eslint-disable jsx-a11y/alt-text */
+import { useState, Fragment } from "react";
 import classes from "./UserProfile.module.css";
 import { Link } from "react-router-dom";
 
@@ -23,8 +24,6 @@ let itemsArray = [
     love: 87,
   },
 ];
-let afterSlide;
-let previousSlide;
 
 const UserProfile = () => {
   const [currentPage, setCurrentPage] = useState(0);

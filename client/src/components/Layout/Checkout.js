@@ -1,12 +1,8 @@
-import { useRef, useState,useContext} from "react";
-import { useHistory } from "react-router";
+import { useRef, useState} from "react";
 
 import classes from "./Checkout.module.css";
 import { CardElement } from "@stripe/react-stripe-js";
-import axios from "axios";
 import { useElements,useStripe } from "@stripe/react-stripe-js";
-import AuthContext from "../../store/auth-context";
-import CartContext from "../../store/cart-context";
 
 
 const isEmpty = (value) => value.trim() === "";
@@ -22,9 +18,6 @@ const Checkout = (props) => {
   });
   const stripe = useStripe();
   const elements = useElements();
-  const authCtx = useContext(AuthContext);
-  const cartCtx = useContext(CartContext);
-  const history = useHistory();
 
   const nameInputRef = useRef();
   const streetInputRef = useRef();
@@ -77,7 +70,7 @@ const Checkout = (props) => {
       }
     });
  
-    const result = await props.onConfirm({
+     await props.onConfirm({
       name: enteredName,
       street: enteredStreet,
       city: enteredCity,
